@@ -149,10 +149,6 @@ footer{background:var(--navy);color:#ddd;margin-top:30px}
 <div class="wrap">
   <section class="hero" id="hero" aria-label="Ofertas destacadas"></section>
 
-  <div class="toolbar">
-    <b>Modo edición:</b> pega tu enlace de afiliado y la URL de la imagen en cada producto.
-    <button id="copyData">Copiar datos</button><button id="resetData">Borrar cambios</button>
-  </div>
 
   <div class="sec" id="ofertas">
     <h2 id="title">Ofertas para ti</h2>
@@ -188,30 +184,14 @@ footer{background:var(--navy);color:#ddd;margin-top:30px}
    La portada (tarjetas naranjas y verdes) se rellena sola con estos productos.
    ============================================================ */
 const SITE_TAG = "pelotaofertas-21";  // opcional: tu tag de afiliado, p. ej. "mitag-21"
-const PRODUCTS = [
- {t:"Auriculares inalámbricos con cancelación de ruido y 40 h de batería",c:"Tecnología",e:"🎧",link:"",img:""},
- {t:"Smartwatch deportivo con GPS, pulsómetro y pantalla AMOLED",c:"Tecnología",e:"⌚",link:"",img:""},
- {t:"Altavoz Bluetooth portátil resistente al agua, graves potentes",c:"Tecnología",e:"🔊",link:"",img:""},
- {t:"Robot aspirador con mapeo láser y vaciado automático",c:"Hogar",e:"🤖",link:"",img:""},
- {t:"Set de 6 cajas organizadoras apilables con tapa para armario",c:"Hogar",e:"🧺",link:"",img:""},
- {t:"Lámpara LED inteligente regulable, compatible con asistentes de voz",c:"Hogar",e:"💡",link:"",img:""},
- {t:"Freidora de aire 5 L digital con 8 programas y cesta antiadherente",c:"Cocina",e:"🍟",link:"",img:""},
- {t:"Batidora de vaso de alta potencia 1800 W con jarra de 2 L",c:"Cocina",e:"🥤",link:"",img:""},
- {t:"Cafetera de cápsulas compacta con depósito extraíble",c:"Cocina",e:"☕",link:"",img:""},
- {t:"Cepillo eléctrico sónico con 5 modos y 8 cabezales de recambio",c:"Belleza",e:"🪥",link:"",img:""},
- {t:"Secador de pelo iónico profesional 2200 W con difusor",c:"Belleza",e:"💇",link:"",img:""},
- {t:"Esterilla de yoga antideslizante 8 mm con correa de transporte",c:"Deporte",e:"🧘",link:"",img:""},
- {t:"Pesas ajustables de 2 a 24 kg para entrenar en casa",c:"Deporte",e:"🏋️",link:"",img:""},
- {t:"Set de bloques de construcción creativo, 1000 piezas",c:"Juguetes",e:"🧱",link:"",img:""}
-];
+let PRODUCTS = [];  // se cargan desde productos.json (edítalos en /admin.html)
 const ICONS={"Tecnología":"💻","Hogar":"🏠","Cocina":"🍳","Belleza":"💄","Deporte":"🏃","Juguetes":"🧸"};
 const CART='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f1111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 11.5a2 2 0 0 0 2 1.5h7.6a2 2 0 0 0 2-1.5L21 7H6"/></svg>';
 
-let cat="Todas", query="", sortBy="rel", edit=location.hash==="#editar";
-let saved={}; try{saved=JSON.parse(localStorage.getItem("ct-edits")||"{}")}catch(e){}
+let cat="Todas", query="", sortBy="rel";
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function data(i){return Object.assign({},PRODUCTS[i],saved[i]||{})}
+function data(i){const x=PRODUCTS[i];return {t:x.titulo||"",c:x.categoria||"Hogar",e:x.emoji||"🛍️",link:x.enlace||"",img:x.imagen||""}}
 function allp(){return PRODUCTS.map((_,i)=>({i,p:data(i)}))}
 function placeholder(p){
   const h=[...p.c].reduce((a,ch)=>a+ch.charCodeAt(0),0)%360;
@@ -220,8 +200,11 @@ function placeholder(p){
 }
 function href(l){
   if(!l)return "#";
-  if(SITE_TAG&&/amazon\.[a-z.]+/i.test(l)&&!/[?&]tag=/.test(l))l+=(l.includes("?")?"&":"?")+"tag="+encodeURIComponent(SITE_TAG);
-  return l;
+  try{
+    const u=new URL(l.trim());
+    if(SITE_TAG&&/(^|\.)amazon\.[a-z.]+$/i.test(u.hostname)){u.searchParams.set("tag",SITE_TAG);return u.toString();}
+    return u.toString();
+  }catch(e){return "#"}
 }
 const tgt=l=>l==="#"?"":' target="_blank" rel="sponsored noopener nofollow"';
 const im=p=>`<img loading="lazy" alt="${esc(p.t)}" src="${esc(p.img||placeholder(p))}" onerror="this.onerror=null;this.src='${placeholder(p)}'">`;
@@ -265,10 +248,6 @@ function render(){
       <h3><a href="${esc(l)}"${t}>${esc(p.t)}</a></h3>
       <p class="note">Consulta el precio y la disponibilidad de hoy en Amazon.es</p>
       <a class="buy" href="${esc(l)}"${t}>Ver precio en Amazon</a>
-      <div class="ed">
-        <label>Tu enlace de afiliado</label><input data-i="${i}" data-k="link" value="${esc(p.link||"")}" placeholder="https://amzn.to/...">
-        <label>URL de la imagen</label><input data-i="${i}" data-k="img" value="${esc(p.img||"")}" placeholder="https://m.media-amazon.com/...">
-      </div>
     </article>`}).join(""):`<div class="empty"><h3>No hay resultados</h3><p>Prueba con otra búsqueda o elige otra categoría.</p></div>`;
 }
 
@@ -286,21 +265,14 @@ $("#dep").addEventListener("change",e=>setCat(e.target.value));
 $("#q").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();render()});
 $("#sort").addEventListener("change",e=>{sortBy=e.target.value;render()});
 
-/* Modo edición: añade #editar al final de la dirección de la página */
-document.addEventListener("change",e=>{
-  const el=e.target; if(!el.dataset||el.dataset.i===undefined)return;
-  const i=el.dataset.i; saved[i]=saved[i]||{}; saved[i][el.dataset.k]=el.value.trim();
-  try{localStorage.setItem("ct-edits",JSON.stringify(saved))}catch(err){}
-  hero();render();
-});
-$("#copyData").onclick=()=>{
-  const out=PRODUCTS.map((_,i)=>{const p=data(i);return {t:p.t,link:p.link||"",img:p.img||""}});
-  navigator.clipboard.writeText(JSON.stringify(out,null,1)).then(()=>{$("#copyData").textContent="¡Copiado!"},()=>{});
-};
-$("#resetData").onclick=()=>{saved={};try{localStorage.removeItem("ct-edits")}catch(e){};hero();render()};
-if(edit)document.body.classList.add("edit");
 
-buildMenus();hero();render();
+function empty(){$("#hero").innerHTML="";$("#grid").innerHTML=`<div class="empty"><h3>Muy pronto, nuevas ofertas</h3><p>Estamos preparando los mejores chollos. Vuelve en un rato.</p></div>`}
+fetch("productos.json",{cache:"no-store"}).then(r=>r.json()).then(list=>{
+  PRODUCTS=Array.isArray(list)?list.filter(x=>x&&x.titulo):[];
+  buildMenus();
+  if(!PRODUCTS.length){empty();return}
+  hero();render();
+}).catch(()=>{buildMenus();empty()});
 </script>
 </body>
 </html>

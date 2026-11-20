@@ -1,0 +1,114 @@
+[
+ {
+  "titulo": "Auriculares inalámbricos con cancelación de ruido y 40 h de batería",
+  "categoria": "Tecnología",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🎧",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Smartwatch deportivo con GPS, pulsómetro y pantalla AMOLED",
+  "categoria": "Tecnología",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "⌚",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Altavoz Bluetooth portátil resistente al agua, graves potentes",
+  "categoria": "Tecnología",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🔊",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Robot aspirador con mapeo láser y vaciado automático",
+  "categoria": "Hogar",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🤖",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Set de 6 cajas organizadoras apilables con tapa para armario",
+  "categoria": "Hogar",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🧺",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Lámpara LED inteligente regulable, compatible con asistentes de voz",
+  "categoria": "Hogar",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "💡",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Freidora de aire 5 L digital con 8 programas y cesta antiadherente",
+  "categoria": "Cocina",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🍟",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Batidora de vaso de alta potencia 1800 W con jarra de 2 L",
+  "categoria": "Cocina",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🥤",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Cafetera de cápsulas compacta con depósito extraíble",
+  "categoria": "Cocina",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "☕",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Cepillo eléctrico sónico con 5 modos y 8 cabezales de recambio",
+  "categoria": "Belleza",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🪥",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Secador de pelo iónico profesional 2200 W con difusor",
+  "categoria": "Belleza",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "💇",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Esterilla de yoga antideslizante 8 mm con correa de transporte",
+  "categoria": "Deporte",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🧘",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Pesas ajustables de 2 a 24 kg para entrenar en casa",
+  "categoria": "Deporte",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🏋️",
+  "ejemplo": true
+ },
+ {
+  "titulo": "Set de bloques de construcción creativo, 1000 piezas",
+  "categoria": "Juguetes",
+  "enlace": "",
+  "imagen": "",
+  "emoji": "🧱",
+  "ejemplo": true
+ }
+]

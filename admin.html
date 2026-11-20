@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Panel pelotaofertas</title>
+<style>
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url(fonts/barlow-condensed-800.woff2) format("woff2")}
+:root{--or:#ff6f0f;--txt:#0f1111;--mut:#565959;--ok:#067d62;--bad:#b12704;--line:#d5d9d9;--bg:#f3f3f3}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;color:var(--txt);background:var(--bg);font-size:16px;line-height:1.45}
+header{background:var(--or);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header b{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:30px;font-weight:800}
+header a{color:#fff;font-weight:600}
+main{max-width:900px;margin:0 auto;padding:16px}
+.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
+h1,h2{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:800;margin:0 0 10px;line-height:1.05}
+h1{font-size:34px}h2{font-size:26px}
+label{display:block;font-weight:600;margin:12px 0 4px}
+small,.hint{color:var(--mut);font-size:13px}
+input,select,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid #a6a6a6;border-radius:8px;background:#fff}
+textarea{min-height:84px;resize:vertical}
+button{font:inherit;cursor:pointer;border-radius:22px;padding:10px 18px;border:1px solid #a6a6a6;background:#fff}
+button.main{background:#ffd814;border-color:#fcd200;font-weight:700}
+button.main:hover{background:#f7ca00}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.msg{margin-top:12px;padding:10px 12px;border-radius:8px;display:none}
+.msg.ok{display:block;background:#e3f6ee;color:var(--ok)}
+.msg.bad{display:block;background:#fde8e4;color:var(--bad)}
+.msg.info{display:block;background:#fff4e6;color:#5a3a12}
+ol li{margin:6px 0}
+.prev{display:flex;gap:14px;align-items:center;margin-top:14px;padding:12px;border:1px dashed var(--line);border-radius:10px}
+.prev img{width:90px;height:90px;object-fit:contain;background:#f7f8f8;border-radius:8px}
+.list{list-style:none;padding:0;margin:0}
+.list li{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
+.list li:last-child{border-bottom:0}
+.list .im{width:56px;height:56px;flex:0 0 56px;border-radius:8px;background:#f7f8f8;display:grid;place-items:center;font-size:30px;overflow:hidden}
+.list .im img{width:100%;height:100%;object-fit:contain}
+.list .tx{flex:1;min-width:0}
+.list .tx b{display:block;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.list .tx span{font-size:12px;color:var(--mut)}
+.list .tx .warn{color:var(--bad)}
+.list .bt{display:flex;gap:4px}
+.list .bt button{padding:6px 10px;border-radius:8px;font-size:14px}
+.hide{display:none}
+code{background:#f0f2f2;padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<header><b>pelotaofertas · panel</b><a href="./" target="_blank" rel="noopener">Ver la web ↗</a></header>
+<main>
+
+<!-- PASO ÚNICO: conectar -->
+<section class="box hide" id="setup">
+  <h1>Conecta el panel (solo la primera vez)</h1>
+  <p>Para que este panel pueda guardar tus productos en la web, necesita una "llave" de GitHub. Se crea una vez y se queda guardada en este navegador.</p>
+  <ol>
+    <li>Abre <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">esta página de GitHub</a> (entra con tu cuenta si te lo pide).</li>
+    <li><b>Token name:</b> escribe <code>panel pelotaofertas</code>. <b>Expiration:</b> elige <i>No expiration</i> (o 1 año).</li>
+    <li><b>Repository access:</b> marca <i>Only select repositories</i> y elige <code>pelotamazon</code>.</li>
+    <li><b>Permissions → Repository permissions → Contents:</b> pon <i>Read and write</i>.</li>
+    <li>Pulsa <b>Generate token</b>, copia el código que empieza por <code>github_pat_</code> y pégalo aquí abajo.</li>
+  </ol>
+  <label for="tok">Tu llave de GitHub</label>
+  <input id="tok" type="password" autocomplete="off" placeholder="github_pat_...">
+  <small>No se la des a nadie. Solo se guarda en este navegador.</small>
+  <div class="row"><button class="main" id="saveTok">Conectar</button></div>
+  <div class="msg" id="setupMsg"></div>
+</section>
+
+<!-- AÑADIR -->
+<section class="box hide" id="add">
+  <h1>Añadir un producto</h1>
+  <p class="hint">En Amazon.es, con tu sesión de afiliado abierta, usa la barra <b>SiteStripe</b> de arriba: pulsa <b>Obtener enlace → Texto</b> y copia el enlace corto, o <b>Texto e imagen</b> y copia todo el código. Pégalo aquí: el panel saca el enlace y la foto solo.</p>
+  <label for="paste">Enlace de Amazon o código de SiteStripe</label>
+  <textarea id="paste" placeholder="https://amzn.to/...   o   https://www.amazon.es/...   o   el código de SiteStripe"></textarea>
+  <label for="ti">Nombre del producto</label>
+  <input id="ti" maxlength="140" placeholder="Ej.: Freidora de aire 5 L digital">
+  <label for="ca">Categoría</label>
+  <select id="ca"></select>
+  <label for="im">Foto (opcional)</label>
+  <input id="im" placeholder="Se rellena sola si pegas el código de SiteStripe con imagen">
+  <small>Si la dejas vacía se verá un dibujo de la categoría.</small>
+  <div class="prev hide" id="prev"><img id="pvImg" alt=""><div><b id="pvTi"></b><br><small id="pvLink"></small></div></div>
+  <div class="row"><button class="main" id="addBtn">Publicar en la web</button></div>
+  <div class="msg" id="addMsg"></div>
+</section>
+
+<!-- LISTA -->
+<section class="box hide" id="listBox">
+  <h2>Tus productos (<span id="count">0</span>)</h2>
+  <p class="hint">Los que están arriba salen primero en la portada. Los marcados "ejemplo" no llevan enlace: bórralos cuando tengas los tuyos.</p>
+  <div class="row" style="margin:0 0 8px"><button id="delEx">Borrar todos los ejemplos</button></div>
+  <ul class="list" id="list"></ul>
+  <div class="msg" id="listMsg"></div>
+</section>
+
+<p class="hint" style="text-align:center"><a href="#" id="logout">Desconectar este navegador</a></p>
+</main>
+
+<script>
+const OWNER="javierpoloiglesias-source", REPO="pelotamazon", FILE="productos.json", BRANCH="main";
+const TAG="pelotaofertas-21";
+const CATS=["Tecnología","Hogar","Cocina","Belleza","Deporte","Juguetes"];
+const EMOJI={"Tecnología":"💻","Hogar":"🏠","Cocina":"🍳","Belleza":"💄","Deporte":"🏃","Juguetes":"🧸"};
+const KEY="pelotaofertas-token";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let token="", items=[], sha="", busy=false;
+try{token=localStorage.getItem(KEY)||""}catch(e){}
+
+function msg(id,type,text){const el=$(id);el.className="msg "+type;el.textContent=text}
+function show(){const on=!!token;$("#setup").classList.toggle("hide",on);$("#add").classList.toggle("hide",!on);$("#listBox").classList.toggle("hide",!on);$("#logout").classList.toggle("hide",!on)}
+$("#ca").innerHTML=CATS.map(c=>`<option>${c}</option>`).join("");
+
+/* ---------- GitHub ---------- */
+const API=`https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
+const b64e=s=>btoa(unescape(encodeURIComponent(s)));
+const b64d=s=>decodeURIComponent(escape(atob(s.replace(/\n/g,""))));
+async function gh(method,body){
+  const r=await fetch(API+(method==="GET"?`?ref=${BRANCH}&t=${Date.now()}`:""),{method,headers:{Authorization:"Bearer "+token,Accept:"application/vnd.github+json"},body:body?JSON.stringify(body):undefined});
+  if(r.status===401||r.status===403)throw new Error("La llave no es válida o no tiene permiso de escritura en pelotamazon. Revisa el paso 4 (Contents: Read and write).");
+  if(r.status===409)throw new Error("Alguien guardó a la vez. Recarga la página y vuelve a intentarlo.");
+  if(!r.ok)throw new Error("GitHub respondió con error "+r.status+".");
+  return r.json();
+}
+async function load(){
+  const j=await gh("GET");sha=j.sha;items=JSON.parse(b64d(j.content));if(!Array.isArray(items))items=[];renderList();
+}
+async function save(newItems,text){
+  const body={message:text,branch:BRANCH,sha,content:b64e(JSON.stringify(newItems,null,1)+"\n")};
+  const j=await gh("PUT",body);sha=j.content.sha;items=newItems;renderList();
+}
+
+/* ---------- Enlaces ---------- */
+function parsePaste(raw){
+  raw=(raw||"").trim();let link="",img="";
+  const hrefs=[...raw.matchAll(/href=["']([^"']+)["']/gi)].map(m=>m[1]);
+  const srcs=[...raw.matchAll(/src=["']([^"']+)["']/gi)].map(m=>m[1]);
+  const urls=raw.match(/https?:\/\/[^\s"'<>]+/gi)||[];
+  link=[...hrefs,...urls].find(u=>isAmazon(u))||"";
+  img=srcs.find(u=>!/ir-e(s|u)\.amazon-adsystem|ir-na\.amazon-adsystem/.test(u))||"";
+  if(img.startsWith("//"))img="https:"+img;
+  img=img.replace(/&amp;/g,"&");link=link.replace(/&amp;/g,"&");
+  return {link,img};
+}
+function isAmazon(u){try{const h=new URL(u).hostname;return /(^|\.)amazon\.[a-z.]+$/i.test(h)||/^(amzn\.to|amzn\.eu)$/i.test(h)}catch(e){return false}}
+function cleanLink(u){
+  const url=new URL(u);
+  if(/(^|\.)amazon\.[a-z.]+$/i.test(url.hostname)){
+    const m=url.pathname.match(/\/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/i);
+    if(m)return `https://${url.hostname}/dp/${m[1].toUpperCase()}?tag=${TAG}`;
+    url.searchParams.set("tag",TAG);return url.toString();
+  }
+  return url.toString(); // amzn.to: SiteStripe ya incluye tu ID
+}
+function titleFromLink(u){
+  try{const p=new URL(u).pathname.split("/").filter(Boolean);const i=p.indexOf("dp");
+    if(i>0&&p[i-1]&&!/^[A-Z0-9]{10}$/.test(p[i-1]))return decodeURIComponent(p[i-1]).replace(/-/g," ").slice(0,120);}catch(e){}
+  return "";
+}
+function preview(){
+  const {link,img}=parsePaste($("#paste").value);
+  if(img&&!$("#im").value)$("#im").value=img;
+  if(link&&!$("#ti").value){const t=titleFromLink(link);if(t)$("#ti").value=t}
+  const L=link?cleanLink(link):"";
+  const I=$("#im").value.trim();
+  $("#prev").classList.toggle("hide",!L);
+  $("#pvTi").textContent=$("#ti").value||"(escribe el nombre)";
+  $("#pvLink").textContent=L;
+  $("#pvImg").src=I||"data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><text x="45" y="60" font-size="44" text-anchor="middle">'+EMOJI[$("#ca").value]+'</text></svg>');
+}
+["#paste","#ti","#im","#ca"].forEach(s=>$(s).addEventListener("input",preview));
+
+/* ---------- Lista ---------- */
+function renderList(){
+  $("#count").textContent=items.length;
+  $("#delEx").classList.toggle("hide",!items.some(x=>x.ejemplo));
+  $("#list").innerHTML=items.map((x,i)=>`<li>
+    <div class="im">${x.imagen?`<img src="${esc(x.imagen)}" alt="">`:esc(x.emoji||EMOJI[x.categoria]||"🛍️")}</div>
+    <div class="tx"><b>${esc(x.titulo)}</b><span>${esc(x.categoria)}${x.ejemplo?' · <span class="warn">ejemplo, sin enlace</span>':x.enlace?' · <a href="'+esc(x.enlace)+'" target="_blank" rel="noopener">probar enlace</a>':''}</span></div>
+    <div class="bt"><button data-up="${i}" title="Subir" ${i?"":"disabled"}>↑</button><button data-del="${i}" title="Borrar">🗑</button></div></li>`).join("")||'<li class="hint">Aún no hay productos.</li>';
+}
+async function run(fn,box){if(busy)return;busy=true;document.querySelectorAll("button").forEach(b=>b.disabled=true);
+  try{await fn()}catch(e){msg(box,"bad",e.message)}finally{busy=false;document.querySelectorAll("button").forEach(b=>b.disabled=false);renderList()}}
+
+$("#list").addEventListener("click",e=>{
+  const up=e.target.closest("[data-up]"),del=e.target.closest("[data-del]");
+  if(up){const i=+up.dataset.up;run(async()=>{const n=[...items];[n[i-1],n[i]]=[n[i],n[i-1]];await save(n,"Reordenar productos");msg("#listMsg","ok","Orden guardado. La web se actualiza en 1 minuto.")},"#listMsg")}
+  if(del){const i=+del.dataset.del;if(!confirm("¿Borrar «"+items[i].titulo+"»?"))return;
+    run(async()=>{const n=items.filter((_,k)=>k!==i);await save(n,"Borrar producto: "+items[i].titulo);msg("#listMsg","ok","Borrado. La web se actualiza en 1 minuto.")},"#listMsg")}
+});
+$("#delEx").onclick=()=>{if(!confirm("¿Borrar todos los productos de ejemplo?"))return;
+  run(async()=>{await save(items.filter(x=>!x.ejemplo),"Borrar productos de ejemplo");msg("#listMsg","ok","Ejemplos borrados. La web se actualiza en 1 minuto.")},"#listMsg")};
+
+$("#addBtn").onclick=()=>{
+  const {link}=parsePaste($("#paste").value);
+  const ti=$("#ti").value.trim(), im=$("#im").value.trim();
+  if(!link){msg("#addMsg","bad","No encuentro un enlace de Amazon en lo que has pegado. Debe empezar por https://amzn.to/ o https://www.amazon.es/");return}
+  if(!ti){msg("#addMsg","bad","Escribe el nombre del producto.");return}
+  if(im&&!/^https:\/\//.test(im)){msg("#addMsg","bad","La foto debe ser una dirección que empiece por https://");return}
+  const p={titulo:ti,categoria:$("#ca").value,enlace:cleanLink(link),imagen:im,emoji:EMOJI[$("#ca").value]};
+  run(async()=>{await load();await save([p,...items],"Añadir producto: "+ti);
+    $("#paste").value="";$("#ti").value="";$("#im").value="";$("#prev").classList.add("hide");
+    msg("#addMsg","ok","¡Publicado! Aparecerá el primero en la web en 1 minuto.")},"#addMsg");
+};
+
+/* ---------- Conectar ---------- */
+$("#saveTok").onclick=async()=>{
+  const t=$("#tok").value.trim();if(!t){msg("#setupMsg","bad","Pega primero tu llave.");return}
+  token=t;msg("#setupMsg","info","Comprobando…");
+  try{await load();try{localStorage.setItem(KEY,t)}catch(e){}show();$("#tok").value=""}
+  catch(e){token="";msg("#setupMsg","bad",e.message)}
+};
+$("#logout").onclick=e=>{e.preventDefault();if(!confirm("¿Desconectar el panel en este navegador?"))return;try{localStorage.removeItem(KEY)}catch(x){}token="";items=[];show()};
+
+show();
+if(token)load().catch(e=>{msg("#listMsg","bad",e.message);$("#listBox").classList.remove("hide")});
+</script>
+</body>
+</html>
