@@ -75,7 +75,7 @@ code{background:#f0f2f2;padding:1px 5px;border-radius:4px}
   <h1>Añadir un producto</h1>
   <p class="hint">En Amazon.es, con tu sesión de afiliado abierta, usa la barra <b>SiteStripe</b> de arriba: pulsa <b>Obtener enlace → Texto</b> y copia el enlace corto, o <b>Texto e imagen</b> y copia todo el código. Pégalo aquí: el panel saca el enlace y la foto solo.</p>
   <label for="paste">Enlace de Amazon o código de SiteStripe</label>
-  <textarea id="paste" placeholder="https://amzn.to/...   o   https://www.amazon.es/...   o   el código de SiteStripe"></textarea>
+  <textarea id="paste" placeholder="https://link.amazon/...   o   https://amzn.to/...   o   https://www.amazon.es/...   o   el código de SiteStripe"></textarea>
   <label for="ti">Nombre del producto</label>
   <input id="ti" maxlength="140" placeholder="Ej.: Freidora de aire 5 L digital">
   <label for="ca">Categoría</label>
@@ -146,7 +146,7 @@ function parsePaste(raw){
   img=img.replace(/&amp;/g,"&");link=link.replace(/&amp;/g,"&");
   return {link,img};
 }
-function isAmazon(u){try{const h=new URL(u).hostname;return /(^|\.)amazon\.[a-z.]+$/i.test(h)||/^(amzn\.to|amzn\.eu)$/i.test(h)}catch(e){return false}}
+function isAmazon(u){try{const h=new URL(u).hostname;return /(^|\.)amazon\.[a-z.]+$/i.test(h)||/^(amzn\.to|amzn\.eu|link\.amazon)$/i.test(h)}catch(e){return false}}
 function cleanLink(u){
   const url=new URL(u);
   if(/(^|\.)amazon\.[a-z.]+$/i.test(url.hostname)){
@@ -198,7 +198,7 @@ $("#delEx").onclick=()=>{if(!confirm("¿Borrar todos los productos de ejemplo?")
 $("#addBtn").onclick=()=>{
   const {link}=parsePaste($("#paste").value);
   const ti=$("#ti").value.trim(), im=$("#im").value.trim();
-  if(!link){msg("#addMsg","bad","No encuentro un enlace de Amazon en lo que has pegado. Debe empezar por https://amzn.to/ o https://www.amazon.es/");return}
+  if(!link){msg("#addMsg","bad","No encuentro un enlace de Amazon en lo que has pegado. Debe empezar por https://link.amazon/, https://amzn.to/ o https://www.amazon.es/");return}
   if(!ti){msg("#addMsg","bad","Escribe el nombre del producto.");return}
   if(im&&!/^https:\/\//.test(im)){msg("#addMsg","bad","La foto debe ser una dirección que empiece por https://");return}
   const p={titulo:ti,categoria:$("#ca").value,enlace:cleanLink(link),imagen:im,emoji:EMOJI[$("#ca").value]};
