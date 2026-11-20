@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PELOTAMAZON · Las mejores ofertas de Amazon</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--or:#ff6f0f;--or2:#ff9c4b;--hero:#ff5f00;--green:#0c4a3c;--gd:#0b3d2f;--red:#d0103a;--txt:#0f1111;--mut:#565959;--link:#007185;--navy:#232f3e;--yellow:#ffd814;--ok:#067d62}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Amazon Ember","Segoe UI",Arial,Helvetica,sans-serif;background:#fff;color:var(--txt);font-size:14px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.hd,.logo,.hero h2,.hero h3,.sc h4,.sec h2,.bf,.promo{font-family:"Barlow Condensed","Arial Narrow","Roboto Condensed",Impact,sans-serif;font-weight:800;letter-spacing:-.01em}
+/* Cabecera */
+header{background:var(--or);display:flex;align-items:center;gap:14px;padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px;position:sticky;top:0;z-index:30}
+.logo{color:#fff;font-size:34px;line-height:.9;display:flex;flex-direction:column;padding:2px 6px;text-transform:lowercase}
+.logo svg{width:100%;height:10px;margin-top:2px}
+.loc{display:flex;flex-direction:column;color:var(--gd);line-height:1.15;font-size:12px;white-space:nowrap}
+.loc b{font-size:14px}
+.search{flex:1;display:flex;height:50px;border-radius:8px;overflow:hidden;background:#fff;min-width:0}
+.search select{border:0;background:#e6e6e6;color:#444;padding:0 10px;font-size:13px;max-width:190px;cursor:pointer}
+.search input{flex:1;border:0;padding:0 14px;font-size:16px;min-width:0;outline:none}
+.search button{border:0;background:#e9e9e9;width:56px;display:grid;place-items:center;cursor:pointer}
+.search button:hover{background:#ddd}
+.hmenu{display:flex;gap:20px;color:var(--gd);align-items:center;white-space:nowrap;font-size:12px;line-height:1.15}
+.hmenu b{font-size:14px;display:block}
+.cart{display:flex;align-items:flex-end;gap:4px;position:relative}
+.cart i{position:absolute;left:14px;top:-8px;font-style:normal;font-weight:800;color:var(--gd);font-size:14px}
+nav{background:var(--or2);display:flex;align-items:center;gap:2px;padding:0 10px;overflow-x:auto;scrollbar-width:none}
+nav button{background:none;border:0;padding:12px 11px;cursor:pointer;white-space:nowrap;font-size:15px;border-radius:4px}
+nav button:hover{background:rgba(255,255,255,.35)}
+nav button.on{font-weight:700;box-shadow:inset 0 -3px 0 var(--txt)}
+nav .bf{font-size:19px;font-weight:700}
+nav .promo{margin-left:auto;font-size:19px;white-space:nowrap;padding:0 8px}
+/* Portada */
+.wrap{max-width:1520px;margin:0 auto;padding:0 12px}
+.hero{display:grid;grid-template-columns:1.52fr repeat(4,1fr);grid-auto-rows:auto;gap:12px;padding:12px 0}
+.card{border-radius:18px;padding:16px;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.or{background:linear-gradient(160deg,var(--hero),#ff7a1a)}
+.gr{background:var(--green)}
+.big{grid-row:1/3;min-height:640px}
+.row1{min-height:500px}
+.card small{font-size:17px;display:block;margin-bottom:4px}
+.hero h2{font-size:clamp(34px,4.2vw,60px);line-height:.98;margin:0 0 10px}
+.hero h3{font-size:clamp(28px,2.7vw,42px);line-height:1;margin:0 0 10px}
+.cd{background:rgba(0,0,0,.25);align-self:flex-start;border-radius:8px;padding:6px 12px;font-size:15px;margin-bottom:12px}
+.cd b{font-size:18px;font-variant-numeric:tabular-nums}
+.circ{margin:auto auto 0;width:84%;aspect-ratio:1;border-radius:50%;border:6px solid #ffe9b0;background:radial-gradient(circle,#ffb15c,#ff6a00 70%);display:grid;place-items:center;overflow:hidden;box-shadow:0 0 0 6px rgba(255,233,176,.3)}
+.gr .circ{background:radial-gradient(circle,#fff6d6,#e9dcaa 80%)}
+.circ img{width:78%;height:78%;object-fit:contain}
+.tiles{display:grid;gap:8px;margin-top:auto}
+.t2{grid-template-columns:1fr 1fr}
+.t3{grid-template-columns:repeat(3,1fr)}
+.tile{position:relative;background:#fff;border-radius:10px;aspect-ratio:3/4;display:block;overflow:hidden}
+.tile img,.imgl img,.sc img{width:100%;height:100%;object-fit:contain;display:block;padding:8px}
+.tile:hover{outline:3px solid #fff}
+.frame{border:4px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#ffd35a,var(--red)) border-box;border-radius:10px}
+.pct{position:absolute;left:8px;bottom:8px;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:3px 7px;border-radius:5px}
+.big .tiles{margin-top:12px}
+.big .t2 .tile{aspect-ratio:1.05}
+.big .t3 .tile{aspect-ratio:1}
+.strip{grid-column:2/6;position:relative;min-width:0}
+.sl{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;height:100%;scroll-behavior:smooth}
+.sc{flex:0 0 198px;min-height:235px;border-radius:14px;padding:14px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.sc h4{margin:0 0 6px;font-size:25px;line-height:1}
+.sc.gr h4{color:#fff}
+.sc.wh{background:#fff;border:1px solid #e3e3e3}
+.sc .im{flex:1;position:relative;min-height:120px;display:block}
+.sc .im img{padding:0}
+.sc.gr .circ{width:90%;margin:auto auto 0}
+.sc small{color:var(--mut);font-size:12px;margin:-2px 0 4px}
+.arrow{position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:46px;height:96px;border-radius:10px 0 0 10px;border:1px solid #ddd;background:#fff;font-size:30px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);z-index:3}
+/* Listado */
+.sec{margin:18px 0 12px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sec h2{margin:0;font-size:34px}
+.sec select{padding:7px 10px;border:1px solid #d5d9d9;border-radius:8px;background:#f0f2f2;font:inherit}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:12px}
+.p{background:#fff;border:1px solid #e3e3e3;border-radius:14px;padding:14px;display:flex;flex-direction:column;position:relative;transition:box-shadow .15s}
+.p:hover{box-shadow:0 4px 16px rgba(15,17,17,.18)}
+.badge{align-self:flex-start;background:var(--red);color:#fff;font-weight:700;font-size:12px;padding:3px 8px;border-radius:4px;margin-bottom:8px}
+.badge.b2{background:var(--txt)}
+.imgl{display:block;position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#f7f8f8;margin-bottom:10px}
+.imgl img{transition:transform .25s}
+.imgl:hover img{transform:scale(1.05)}
+.p h3{margin:0 0 6px;font-size:15px;font-weight:500;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.p h3 a:hover{color:#c45500}
+.rate{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--link);margin-bottom:4px}
+.stars{position:relative;display:inline-block;color:#ddd;letter-spacing:1px;font-size:15px;line-height:1}
+.stars i{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap;color:#ffa41c;font-style:normal}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:4px 0 2px}
+.price .off{color:var(--red);font-size:20px;font-weight:300}
+.price .now{font-size:26px;font-weight:500;line-height:1}
+.price .now sup{font-size:13px;vertical-align:top;position:relative;top:2px}
+.old{color:var(--mut);font-size:13px}
+.prime{color:var(--ok);font-weight:700;font-size:13px;margin:2px 0}
+.prime b{color:#00a8e1;font-style:italic;font-size:14px}
+.cupon{display:inline-block;background:#ccf3e6;color:#067d62;border:1px dashed #067d62;border-radius:3px;padding:2px 6px;font-size:12px;margin:4px 0;align-self:flex-start}
+.stock{color:#b12704;font-size:12px;margin:2px 0 8px}
+.buy{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);border:1px solid #fcd200;border-radius:20px;padding:10px 12px;font-weight:600;cursor:pointer}
+.buy:hover{background:#f7ca00}
+.ed{display:none;margin-top:8px;border-top:1px dashed #ccc;padding-top:8px}
+.ed label{display:block;font-size:11px;color:var(--mut);margin-top:4px}
+.ed input{width:100%;padding:6px;border:1px solid #888;border-radius:4px;font:inherit;font-size:12px}
+body.edit .ed{display:block}
+.toolbar{display:none;background:#fff3cd;border:1px solid #e0c36a;border-radius:8px;padding:10px 14px;margin-top:12px;gap:10px;align-items:center;flex-wrap:wrap}
+body.edit .toolbar{display:flex}
+.toolbar button{border:1px solid #888;background:#fff;border-radius:6px;padding:6px 12px;cursor:pointer}
+.empty{grid-column:1/-1;background:#f7f8f8;padding:40px;text-align:center;border-radius:14px}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:24px 0}
+.trust div{background:#f7f8f8;border-radius:14px;padding:16px;display:flex;gap:12px;align-items:center}
+.trust span{font-size:30px}.trust p{margin:0}.trust small{display:block;color:var(--mut)}
+footer{background:var(--navy);color:#ddd;margin-top:30px}
+.top{background:#37475a;text-align:center;padding:14px;color:#fff;cursor:pointer}
+.top:hover{background:#485769}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:30px 12px;max-width:1000px;margin:0 auto}
+.fcols h4{color:#fff;margin:0 0 8px}
+.fcols a{display:block;padding:3px 0;font-size:13px}
+.fcols a:hover{text-decoration:underline}
+.legal{background:#131a22;padding:18px 16px;text-align:center;font-size:12px;color:#aaa;line-height:1.6}
+.legal b{color:#fff;font-size:16px}
+:focus-visible{outline:3px solid #007eb9;outline-offset:2px}
+@media(max-width:1100px){.hero{grid-template-columns:1fr 1fr}.big{grid-column:1/3;grid-row:auto;min-height:0}.strip{grid-column:1/3}.row1{min-height:420px}.hmenu,.loc{display:none}}
+@media(max-width:700px){.search select{display:none}.logo{font-size:26px}.row1{min-height:360px;padding:12px}.card{padding:12px}.grid{grid-template-columns:repeat(2,1fr);gap:8px}.p{padding:10px}.price .now{font-size:21px}nav .promo{display:none}.arrow{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#" aria-label="pelotamazon, inicio">pelotamazon<svg viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M3 2Q50 14 97 2" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></a>
+  <div class="loc"><small>Enviar a</small><b>España</b></div>
+  <form class="search" onsubmit="return false">
+    <select id="dep" aria-label="Departamento"></select>
+    <input id="q" type="search" placeholder="Buscar ofertas en pelotamazon" aria-label="Buscar">
+    <button type="submit" aria-label="Buscar"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f1111" stroke-width="2.4" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+  </form>
+  <div class="hmenu"><div>Hola<b>Cuenta y listas ▾</b></div><div><b>Pedidos</b></div>
+    <div class="cart"><svg width="38" height="34" viewBox="0 0 24 24" fill="none" stroke="#0b3d2f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.7 11.5a2 2 0 0 0 2 1.5h7.6a2 2 0 0 0 2-1.5L21 7H6"/></svg><i>0</i><b>Cesta</b></div></div>
+</header>
+<nav id="nav" aria-label="Categorías"></nav>
+
+<div class="wrap">
+  <section class="hero" id="hero" aria-label="Ofertas destacadas"></section>
+
+  <div class="toolbar">
+    <b>Modo edición:</b> pega tu enlace de afiliado y la URL de la imagen en cada producto.
+    <button id="copyData">Copiar datos</button><button id="resetData">Borrar cambios</button>
+  </div>
+
+  <div class="sec" id="ofertas">
+    <h2 id="title">Ofertas para ti</h2>
+    <label>Ordenar por: <select id="sort"><option value="rel">Destacados</option><option value="dto">Mayor descuento</option><option value="pa">Precio: menor a mayor</option><option value="pd">Precio: mayor a menor</option><option value="val">Mejor valorados</option></select></label>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <div class="trust">
+    <div><span>🛒</span><p><b>Compra en Amazon</b><small>Pago y envío seguros</small></p></div>
+    <div><span>🏷️</span><p><b>Ofertas revisadas</b><small>Comprobamos los precios</small></p></div>
+    <div><span>📦</span><p><b>Envío Prime</b><small>En productos con la etiqueta</small></p></div>
+    <div><span>↩️</span><p><b>Devoluciones fáciles</b><small>Según política de Amazon</small></p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="top" onclick="scrollTo({top:0,behavior:'smooth'})">Volver arriba</div>
+  <div class="fcols">
+    <div><h4>Sobre nosotros</h4><a href="#">Quiénes somos</a><a href="#">Cómo elegimos las ofertas</a></div>
+    <div><h4>Categorías</h4><a href="#" data-c="Tecnología">Tecnología</a><a href="#" data-c="Hogar">Hogar</a><a href="#" data-c="Cocina">Cocina</a></div>
+    <div><h4>Ayuda</h4><a href="#">Contacto</a><a href="#">Política de privacidad</a><a href="#">Aviso legal</a></div>
+  </div>
+  <div class="legal"><b>pelotamazon</b><br>Como afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y la disponibilidad pueden cambiar; el precio válido es el que figura en Amazon en el momento de la compra. Amazon y el logotipo de Amazon son marcas de Amazon.com, Inc. o sus filiales.</div>
+</footer>
+
+<script>
+/* ============================================================
+   EDITA AQUÍ TUS PRODUCTOS
+   - link: tu enlace de afiliado de Amazon
+   - img:  URL de la imagen del producto (clic derecho > copiar dirección de imagen)
+   - Si img está vacío se muestra una imagen de ejemplo
+   La portada (tarjetas naranjas y verdes) se rellena sola con estos productos.
+   ============================================================ */
+const SITE_TAG = "";  // opcional: tu tag de afiliado, p. ej. "mitag-21"
+const PRODUCTS = [
+ {t:"Auriculares inalámbricos con cancelación de ruido y 40 h de batería",c:"Tecnología",e:"🎧",p:49.99,o:89.99,r:4.6,n:12840,prime:true,cup:"Cupón 10 %",stock:"",badge:"Oferta del día",link:"",img:""},
+ {t:"Smartwatch deportivo con GPS, pulsómetro y pantalla AMOLED",c:"Tecnología",e:"⌚",p:79.9,o:129.9,r:4.4,n:5320,prime:true,cup:"",stock:"Solo quedan 6",badge:"",link:"",img:""},
+ {t:"Altavoz Bluetooth portátil resistente al agua, graves potentes",c:"Tecnología",e:"🔊",p:29.99,o:54.99,r:4.5,n:21480,prime:true,cup:"",stock:"",badge:"Más vendido",link:"",img:""},
+ {t:"Robot aspirador con mapeo láser y vaciado automático",c:"Hogar",e:"🤖",p:229,o:449,r:4.3,n:3870,prime:true,cup:"Cupón 20 €",stock:"Solo quedan 3",badge:"Oferta del día",link:"",img:""},
+ {t:"Set de 6 cajas organizadoras apilables con tapa para armario",c:"Hogar",e:"🧺",p:18.95,o:27.95,r:4.7,n:9210,prime:true,cup:"",stock:"",badge:"",link:"",img:""},
+ {t:"Lámpara LED inteligente regulable, compatible con asistentes de voz",c:"Hogar",e:"💡",p:14.99,o:24.99,r:4.4,n:7650,prime:false,cup:"",stock:"",badge:"",link:"",img:""},
+ {t:"Freidora de aire 5 L digital con 8 programas y cesta antiadherente",c:"Cocina",e:"🍟",p:59.99,o:109.99,r:4.6,n:18930,prime:true,cup:"Cupón 5 %",stock:"",badge:"Más vendido",link:"",img:""},
+ {t:"Batidora de vaso de alta potencia 1800 W con jarra de 2 L",c:"Cocina",e:"🥤",p:44.9,o:79.9,r:4.5,n:6420,prime:true,cup:"",stock:"Solo quedan 8",badge:"",link:"",img:""},
+ {t:"Cafetera de cápsulas compacta con depósito extraíble",c:"Cocina",e:"☕",p:39,o:69,r:4.4,n:11210,prime:true,cup:"",stock:"",badge:"",link:"",img:""},
+ {t:"Cepillo eléctrico sónico con 5 modos y 8 cabezales de recambio",c:"Belleza",e:"🪥",p:24.99,o:49.99,r:4.6,n:14760,prime:true,cup:"Cupón 8 %",stock:"",badge:"Oferta del día",link:"",img:""},
+ {t:"Secador de pelo iónico profesional 2200 W con difusor",c:"Belleza",e:"💇",p:34.5,o:59.9,r:4.5,n:4980,prime:false,cup:"",stock:"",badge:"",link:"",img:""},
+ {t:"Esterilla de yoga antideslizante 8 mm con correa de transporte",c:"Deporte",e:"🧘",p:16.99,o:29.99,r:4.7,n:16340,prime:true,cup:"",stock:"",badge:"",link:"",img:""},
+ {t:"Pesas ajustables de 2 a 24 kg para entrenar en casa",c:"Deporte",e:"🏋️",p:119,o:189,r:4.5,n:2860,prime:true,cup:"",stock:"Solo quedan 4",badge:"",link:"",img:""},
+ {t:"Set de bloques de construcción creativo, 1000 piezas",c:"Juguetes",e:"🧱",p:22.95,o:34.95,r:4.8,n:8730,prime:true,cup:"",stock:"",badge:"Más vendido",link:"",img:""}
+];
+const ICONS={"Tecnología":"💻","Hogar":"🏠","Cocina":"🍳","Belleza":"💄","Deporte":"🏃","Juguetes":"🧸"};
+const CART='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f1111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 11.5a2 2 0 0 0 2 1.5h7.6a2 2 0 0 0 2-1.5L21 7H6"/></svg>';
+
+let cat="Todas", query="", sortBy="rel", edit=location.hash==="#editar";
+let saved={}; try{saved=JSON.parse(localStorage.getItem("ct-edits")||"{}")}catch(e){}
+const $=s=>document.querySelector(s);
+const fmt=n=>{const [a,b]=n.toFixed(2).split(".");return `${Number(a).toLocaleString("es-ES")}<sup>,${b} €</sup>`};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dto=p=>Math.round((1-p.p/p.o)*100);
+function data(i){return Object.assign({},PRODUCTS[i],saved[i]||{})}
+function allp(){return PRODUCTS.map((_,i)=>({i,p:data(i)}))}
+function placeholder(p){
+  const h=[...p.c].reduce((a,ch)=>a+ch.charCodeAt(0),0)%360;
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl(${h},70%,94%)"/><stop offset="1" stop-color="hsl(${h+40},70%,84%)"/></linearGradient></defs><rect width="300" height="300" fill="url(#g)"/><circle cx="150" cy="150" r="96" fill="#fff" opacity=".6"/><text x="150" y="190" font-size="110" text-anchor="middle">${p.e}</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+function href(l){
+  if(!l)return "#";
+  if(SITE_TAG&&/amazon\.[a-z.]+/i.test(l)&&!/[?&]tag=/.test(l))l+=(l.includes("?")?"&":"?")+"tag="+encodeURIComponent(SITE_TAG);
+  return l;
+}
+const tgt=l=>l==="#"?"":' target="_blank" rel="sponsored noopener nofollow"';
+const im=p=>`<img loading="lazy" alt="${esc(p.t)}" src="${esc(p.img||placeholder(p))}" onerror="this.onerror=null;this.src='${placeholder(p)}'">`;
+function lnk(x,cls,inner){const l=href(x.p.link);return `<a class="${cls}" href="${esc(l)}"${tgt(l)} aria-label="Ver en Amazon: ${esc(x.p.t)}">${inner}</a>`}
+const tile=(x,fr)=>lnk(x,"tile"+(fr?" frame":""),im(x.p)+`<span class="pct">-${dto(x.p)}%</span>`);
+const stars=r=>`<span class="stars" aria-label="${r} de 5">★★★★★<i style="width:${r/5*100}%">★★★★★</i></span>`;
+
+function hero(){
+  const all=allp(), top=[...all].sort((a,b)=>dto(b.p)-dto(a.p));
+  const best=c=>top.find(x=>x.p.c===c)||top[0];
+  const short=t=>t.split(/ con |, /)[0];
+  const t0=top[0], bel=best("Belleza"), hog=best("Hogar");
+  let h=`<div class="card or big"><small>Semana de Black Friday</small><h2>Los chollos más gordos de Amazon, cada día</h2><div class="cd">Termina hoy en <b id="cd">00:00:00</b></div>
+    <div class="tiles t2">${top.slice(0,2).map(x=>tile(x,1)).join("")}</div>
+    <div class="tiles t3">${top.slice(2,5).map(x=>tile(x,1)).join("")}</div></div>`;
+  h+=`<div class="card or row1"><small>Semana de Black Friday</small><h3>Ahorra un ${dto(t0.p)}% en ${esc(short(t0.p.t))}</h3>${lnk(t0,"circ",im(t0.p))}</div>`;
+  h+=`<div class="card or row1"><h3>No te pierdas estas ofertas</h3><div class="tiles t2">${top.slice(1,5).map(x=>tile(x,0)).join("")}</div></div>`;
+  h+=`<a class="card gr row1" href="#ofertas" data-c="Belleza"><small>Semana de Black Friday</small><h3>Cuidado personal: -${dto(bel.p)}% y más</h3><div class="circ">${im(bel.p)}</div></a>`;
+  h+=`<a class="card or row1" href="#ofertas" data-c="Hogar"><h3>Grandes Ofertas Black Friday</h3><small>Compra ofertas en Hogar</small><div class="circ">${im(hog.p)}</div></a>`;
+  const cats=Object.keys(ICONS); let s=`<a class="sc gr" href="#ofertas" data-c="Todas"><h4>Todas las ofertas</h4><div class="circ"><span style="font-size:64px">📦</span></div></a>`;
+  cats.forEach((c,k)=>{
+    const w=top[(k+5)%top.length], b=best(c);
+    s+=lnk(w,"sc wh",`<h4>Oferta para ti</h4><span class="im">${im(w.p)}<span class="pct">-${dto(w.p)}%</span></span>`);
+    s+=`<a class="sc gr" href="#ofertas" data-c="${c}"><h4>Ofertas en ${c}</h4><div class="circ">${im(b.p)}</div></a>`;
+  });
+  h+=`<div class="strip"><div class="sl">${s}</div><button class="arrow" aria-label="Siguiente">›</button></div>`;
+  $("#hero").innerHTML=h;
+}
+
+function render(){
+  let list=allp();
+  if(cat!=="Todas")list=list.filter(x=>x.p.c===cat);
+  if(query)list=list.filter(x=>(x.p.t+" "+x.p.c).toLowerCase().includes(query));
+  const s={dto:(a,b)=>dto(b.p)-dto(a.p),pa:(a,b)=>a.p.p-b.p.p,pd:(a,b)=>b.p.p-a.p.p,val:(a,b)=>b.p.r-a.p.r}[sortBy];
+  if(s)list.sort(s);
+  $("#title").textContent=cat==="Todas"?"Ofertas para ti":"Ofertas en "+cat;
+  $("#grid").innerHTML=list.length?list.map(x=>{
+    const {i,p}=x, d=dto(p), l=href(p.link), t=tgt(l);
+    return `<article class="p">
+      ${p.badge?`<span class="badge ${p.badge==="Más vendido"?"b2":""}">${esc(p.badge)}</span>`:""}
+      <a class="imgl" href="${esc(l)}"${t} aria-label="Ver en Amazon: ${esc(p.t)}">${im(p)}<span class="pct">-${d}%</span></a>
+      <h3><a href="${esc(l)}"${t}>${esc(p.t)}</a></h3>
+      <div class="rate">${String(p.r).replace(".",",")} ${stars(p.r)} (${p.n.toLocaleString("es-ES")})</div>
+      <div class="price"><span class="off">-${d}%</span><span class="now">${fmt(p.p)}</span></div>
+      <div class="old">Precio recomendado: <s>${p.o.toLocaleString("es-ES",{minimumFractionDigits:2})} €</s></div>
+      ${p.cup?`<span class="cupon">🏷️ ${esc(p.cup)}</span>`:""}
+      ${p.prime?`<div class="prime"><b>prime</b> Envío GRATIS</div>`:""}
+      <div class="stock">${p.stock?esc(p.stock):"&nbsp;"}</div>
+      <a class="buy" href="${esc(l)}"${t}>${CART} Comprar en Amazon</a>
+      <div class="ed">
+        <label>Tu enlace de afiliado</label><input data-i="${i}" data-k="link" value="${esc(p.link||"")}" placeholder="https://amzn.to/...">
+        <label>URL de la imagen</label><input data-i="${i}" data-k="img" value="${esc(p.img||"")}" placeholder="https://m.media-amazon.com/...">
+      </div>
+    </article>`}).join(""):`<div class="empty"><h3>No hay resultados</h3><p>Prueba con otra búsqueda o elige otra categoría.</p></div>`;
+}
+
+function buildMenus(){
+  const cats=Object.keys(ICONS);
+  $("#nav").innerHTML=`<button data-c="Todas">☰ Todo</button><button class="bf ${cat==="Todas"?"on":""}" data-c="Todas">Semana de Black Friday</button>`+cats.map(c=>`<button data-c="${c}" class="${c===cat?"on":""}">${c}</button>`).join("")+`<span class="promo">Las ofertas de Black Friday ya están aquí</span>`;
+  $("#dep").innerHTML=["Todas",...cats].map(c=>`<option value="${c}" ${c===cat?"selected":""}>${c==="Todas"?"Todos los departamentos":c}</option>`).join("");
+}
+function setCat(c){cat=c;buildMenus();render();document.getElementById("ofertas").scrollIntoView({behavior:"smooth"})}
+document.addEventListener("click",e=>{
+  const ar=e.target.closest(".arrow"); if(ar){const sl=$(".sl");sl.scrollBy({left:420})}
+  const b=e.target.closest("[data-c]"); if(b){e.preventDefault();setCat(b.dataset.c)}
+});
+$("#dep").addEventListener("change",e=>setCat(e.target.value));
+$("#q").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();render()});
+$("#sort").addEventListener("change",e=>{sortBy=e.target.value;render()});
+
+/* Modo edición: añade #editar al final de la dirección de la página */
+document.addEventListener("change",e=>{
+  const el=e.target; if(!el.dataset||el.dataset.i===undefined)return;
+  const i=el.dataset.i; saved[i]=saved[i]||{}; saved[i][el.dataset.k]=el.value.trim();
+  try{localStorage.setItem("ct-edits",JSON.stringify(saved))}catch(err){}
+  hero();render();
+});
+$("#copyData").onclick=()=>{
+  const out=PRODUCTS.map((_,i)=>{const p=data(i);return {t:p.t,link:p.link||"",img:p.img||""}});
+  navigator.clipboard.writeText(JSON.stringify(out,null,1)).then(()=>{$("#copyData").textContent="¡Copiado!"},()=>{});
+};
+$("#resetData").onclick=()=>{saved={};try{localStorage.removeItem("ct-edits")}catch(e){};hero();render()};
+if(edit)document.body.classList.add("edit");
+
+function tick(){
+  const el=$("#cd"); if(!el)return;
+  const n=new Date(), end=new Date(n);end.setHours(24,0,0,0);
+  let s=Math.floor((end-n)/1000);
+  const h=Math.floor(s/3600),m=Math.floor(s%3600/60);s%=60;
+  const z=v=>String(v).padStart(2,"0");
+  el.textContent=`${z(h)}:${z(m)}:${z(s)}`;
+}
+buildMenus();hero();render();tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
