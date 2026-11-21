@@ -267,7 +267,9 @@ $("#sort").addEventListener("change",e=>{sortBy=e.target.value;render()});
 
 
 function empty(){$("#hero").innerHTML="";$("#grid").innerHTML=`<div class="empty"><h3>Muy pronto, nuevas ofertas</h3><p>Estamos preparando los mejores chollos. Vuelve en un rato.</p></div>`}
-fetch("productos.json",{cache:"no-store"}).then(r=>r.json()).then(list=>{
+// Los productos se leen directamente de GitHub: añadir productos no necesita publicar la web
+const RAW="https://raw.githubusercontent.com/javierpoloiglesias-source/pelotamazon/main/productos.json?t="+Math.floor(Date.now()/60000);
+fetch(RAW,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()}).catch(()=>fetch("productos.json",{cache:"no-store"}).then(r=>r.json())).then(list=>{
   PRODUCTS=Array.isArray(list)?list.filter(x=>x&&x.titulo):[];
   buildMenus();
   if(!PRODUCTS.length){empty();return}

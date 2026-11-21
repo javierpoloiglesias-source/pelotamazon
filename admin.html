@@ -188,12 +188,12 @@ async function run(fn,box){if(busy)return;busy=true;document.querySelectorAll("b
 
 $("#list").addEventListener("click",e=>{
   const up=e.target.closest("[data-up]"),del=e.target.closest("[data-del]");
-  if(up){const i=+up.dataset.up;run(async()=>{const n=[...items];[n[i-1],n[i]]=[n[i],n[i-1]];await save(n,"Reordenar productos");msg("#listMsg","ok","Orden guardado. La web se actualiza en 1 minuto.")},"#listMsg")}
+  if(up){const i=+up.dataset.up;run(async()=>{const n=[...items];[n[i-1],n[i]]=[n[i],n[i-1]];await save(n,"Reordenar productos");msg("#listMsg","ok","Orden guardado. La web se actualiza en unos minutos.")},"#listMsg")}
   if(del){const i=+del.dataset.del;if(!confirm("¿Borrar «"+items[i].titulo+"»?"))return;
-    run(async()=>{const n=items.filter((_,k)=>k!==i);await save(n,"Borrar producto: "+items[i].titulo);msg("#listMsg","ok","Borrado. La web se actualiza en 1 minuto.")},"#listMsg")}
+    run(async()=>{const n=items.filter((_,k)=>k!==i);await save(n,"Borrar producto: "+items[i].titulo);msg("#listMsg","ok","Borrado. La web se actualiza en unos minutos.")},"#listMsg")}
 });
 $("#delEx").onclick=()=>{if(!confirm("¿Borrar todos los productos de ejemplo?"))return;
-  run(async()=>{await save(items.filter(x=>!x.ejemplo),"Borrar productos de ejemplo");msg("#listMsg","ok","Ejemplos borrados. La web se actualiza en 1 minuto.")},"#listMsg")};
+  run(async()=>{await save(items.filter(x=>!x.ejemplo),"Borrar productos de ejemplo");msg("#listMsg","ok","Ejemplos borrados. La web se actualiza en unos minutos.")},"#listMsg")};
 
 $("#addBtn").onclick=()=>{
   const {link}=parsePaste($("#paste").value);
@@ -204,7 +204,7 @@ $("#addBtn").onclick=()=>{
   const p={titulo:ti,categoria:$("#ca").value,enlace:cleanLink(link),imagen:im,emoji:EMOJI[$("#ca").value]};
   run(async()=>{await load();await save([p,...items],"Añadir producto: "+ti);
     $("#paste").value="";$("#ti").value="";$("#im").value="";$("#prev").classList.add("hide");
-    msg("#addMsg","ok","¡Publicado! Aparecerá el primero en la web en 1 minuto.")},"#addMsg");
+    msg("#addMsg","ok","¡Publicado! Aparecerá el primero en la web en unos minutos.")},"#addMsg");
 };
 
 /* ---------- Conectar ---------- */
