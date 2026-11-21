@@ -7,122 +7,87 @@
   "emoji": "💻"
  },
  {
+  "titulo": "Auriculares inalámbricos Bluetooth 5.4 con 50 h de batería y sonido HiFi",
+  "categoria": "Tecnología",
+  "enlace": "https://www.amazon.es/dp/B0HQJY6YKJ?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61QB3ae4J9L._AC_SL500_.jpg",
+  "emoji": "💻"
+ },
+ {
+  "titulo": "Auriculares deportivos Bluetooth 5.3 con gancho y 60 h de reproducción",
+  "categoria": "Tecnología",
+  "enlace": "https://www.amazon.es/dp/B09TFJJY3W?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61lX+a+vOFL._AC_SL500_.jpg",
+  "emoji": "💻"
+ },
+ {
+  "titulo": "Auriculares inalámbricos Bluetooth 5.4 con pantalla LED y 48 h",
+  "categoria": "Tecnología",
+  "enlace": "https://www.amazon.es/dp/B0HRD6XKFK?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61pJmsOFeIL._AC_SL500_.jpg",
+  "emoji": "💻"
+ },
+ {
+  "titulo": "Lefant M210 Omni: robot aspirador y fregasuelos con autovaciado",
+  "categoria": "Hogar",
+  "enlace": "https://www.amazon.es/dp/B0G7V5G5NR?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/71ofOuKvdrL._AC_SL500_.jpg",
+  "emoji": "🏠"
+ },
+ {
+  "titulo": "Briloner: set de 3 focos LED empotrables para techo",
+  "categoria": "Hogar",
+  "enlace": "https://www.amazon.es/dp/B00I4ZI94M?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/51A29iVgyxL._AC_SL500_.jpg",
+  "emoji": "🏠"
+ },
+ {
+  "titulo": "Pyrex: fuente cuadrada de acero para horno 24 x 24 cm",
+  "categoria": "Cocina",
+  "enlace": "https://www.amazon.es/dp/B00RXIKIIG?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61SM+348eCL._AC_SL500_.jpg",
+  "emoji": "🍳"
+ },
+ {
+  "titulo": "Secador de pelo iónico profesional con difusor",
+  "categoria": "Belleza",
+  "enlace": "https://www.amazon.es/dp/B0GWVJ6XKV?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/71uRgFzcdkL._AC_SL500_.jpg",
+  "emoji": "💄"
+ },
+ {
+  "titulo": "Cecotec IoniCare: secador de pelo compacto con motor brushless",
+  "categoria": "Belleza",
+  "enlace": "https://www.amazon.es/dp/B0FKT988BZ?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/71uQ07S30eL._AC_SL500_.jpg",
+  "emoji": "💄"
+ },
+ {
+  "titulo": "M. Asam AQUA INTENSE: crema de noche hidratante con ácido hialurónico",
+  "categoria": "Belleza",
+  "enlace": "https://www.amazon.es/dp/B0DSJQ1QBK?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/71jpClHyUAL._AC_SL500_.jpg",
+  "emoji": "💄"
+ },
+ {
+  "titulo": "Eastpak Padded Pak'r: mochila de 24 L",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B000CRBEJ2?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/81fOUr20J+L._AC_SL500_.jpg",
+  "emoji": "🏃"
+ },
+ {
+  "titulo": "adidas: calcetines de entrenamiento Graphic Camo",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B0C5RJ4GTZ?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61tsrGCzzIL._AC_SL500_.jpg",
+  "emoji": "🏃"
+ },
+ {
   "titulo": "OMRON X2 Essential: tensiómetro de brazo digital validado clínicamente",
   "categoria": "Belleza",
   "enlace": "https://link.amazon/B08B1uiE4",
   "imagen": "https://m.media-amazon.com/images/I/51RSTFZZa0L._AC_SL500_.jpg",
   "emoji": "💄"
- },
- {
-  "titulo": "Auriculares inalámbricos con cancelación de ruido y 40 h de batería",
-  "categoria": "Tecnología",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🎧",
-  "ejemplo": true
- },
- {
-  "titulo": "Smartwatch deportivo con GPS, pulsómetro y pantalla AMOLED",
-  "categoria": "Tecnología",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "⌚",
-  "ejemplo": true
- },
- {
-  "titulo": "Altavoz Bluetooth portátil resistente al agua, graves potentes",
-  "categoria": "Tecnología",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🔊",
-  "ejemplo": true
- },
- {
-  "titulo": "Robot aspirador con mapeo láser y vaciado automático",
-  "categoria": "Hogar",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🤖",
-  "ejemplo": true
- },
- {
-  "titulo": "Set de 6 cajas organizadoras apilables con tapa para armario",
-  "categoria": "Hogar",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🧺",
-  "ejemplo": true
- },
- {
-  "titulo": "Lámpara LED inteligente regulable, compatible con asistentes de voz",
-  "categoria": "Hogar",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "💡",
-  "ejemplo": true
- },
- {
-  "titulo": "Freidora de aire 5 L digital con 8 programas y cesta antiadherente",
-  "categoria": "Cocina",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🍟",
-  "ejemplo": true
- },
- {
-  "titulo": "Batidora de vaso de alta potencia 1800 W con jarra de 2 L",
-  "categoria": "Cocina",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🥤",
-  "ejemplo": true
- },
- {
-  "titulo": "Cafetera de cápsulas compacta con depósito extraíble",
-  "categoria": "Cocina",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "☕",
-  "ejemplo": true
- },
- {
-  "titulo": "Cepillo eléctrico sónico con 5 modos y 8 cabezales de recambio",
-  "categoria": "Belleza",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🪥",
-  "ejemplo": true
- },
- {
-  "titulo": "Secador de pelo iónico profesional 2200 W con difusor",
-  "categoria": "Belleza",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "💇",
-  "ejemplo": true
- },
- {
-  "titulo": "Esterilla de yoga antideslizante 8 mm con correa de transporte",
-  "categoria": "Deporte",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🧘",
-  "ejemplo": true
- },
- {
-  "titulo": "Pesas ajustables de 2 a 24 kg para entrenar en casa",
-  "categoria": "Deporte",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🏋️",
-  "ejemplo": true
- },
- {
-  "titulo": "Set de bloques de construcción creativo, 1000 piezas",
-  "categoria": "Juguetes",
-  "enlace": "",
-  "imagen": "",
-  "emoji": "🧱",
-  "ejemplo": true
  }
 ]
