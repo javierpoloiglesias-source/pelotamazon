@@ -7,6 +7,55 @@
   "emoji": "💻"
  },
  {
+  "titulo": "Echo Dot (2022): altavoz inteligente con Alexa",
+  "categoria": "Tecnología",
+  "enlace": "https://www.amazon.es/dp/B09B8X9RGM?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/71EJ6HlgX-L._AC_SL500_.jpg",
+  "emoji": "💻"
+ },
+ {
+  "titulo": "Philips i9000 Prestige: afeitadora eléctrica",
+  "categoria": "Belleza",
+  "enlace": "https://www.amazon.es/dp/B0DT6NDW4L?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/71ubb8eK+QL._AC_SL500_.jpg",
+  "emoji": "💄"
+ },
+ {
+  "titulo": "Grundig HD 2200: secador de pelo de viaje 1200 W",
+  "categoria": "Belleza",
+  "enlace": "https://www.amazon.es/dp/B0B9X6KP4D?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61t9f1ZilFL._AC_SL500_.jpg",
+  "emoji": "💄"
+ },
+ {
+  "titulo": "Skechers Graceful Get Connected: zapatillas de mujer",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B07FF4QSKT?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/81AHcdq1udL._AC_SL500_.jpg",
+  "emoji": "🏃"
+ },
+ {
+  "titulo": "Tommy Hilfiger Court Sneaker: zapatillas de piel para mujer",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B0D1VGFCVK?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/51NGD7nu27L._AC_SL500_.jpg",
+  "emoji": "🏃"
+ },
+ {
+  "titulo": "OSRAM Dulux LED S11: bombilla LED de 6 W luz fría",
+  "categoria": "Hogar",
+  "enlace": "https://www.amazon.es/dp/B097NFQHSX?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61OHPchd-XL._AC_SL500_.jpg",
+  "emoji": "🏠"
+ },
+ {
+  "titulo": "Relaxdays: lámpara de mesa cubo de madera y vidrio",
+  "categoria": "Hogar",
+  "enlace": "https://www.amazon.es/dp/B082MF49BR?tag=pelotaofertas-21",
+  "imagen": "https://m.media-amazon.com/images/I/61rmsu-ml1L._AC_SL500_.jpg",
+  "emoji": "🏠"
+ },
+ {
   "titulo": "Anker MagGo: cargador inalámbrico 3 en 1 plegable para iPhone",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B0D8SQJF1Z?tag=pelotaofertas-21",
@@ -21,13 +70,6 @@
   "emoji": "💻"
  },
  {
-  "titulo": "Krups KM8508: cafetera de goteo de 1 L",
-  "categoria": "Cocina",
-  "enlace": "https://www.amazon.es/dp/B00Q784FJG?tag=pelotaofertas-21",
-  "imagen": "https://m.media-amazon.com/images/I/81t23Mw1XRS._AC_SL500_.jpg",
-  "emoji": "🍳"
- },
- {
   "titulo": "Philips Shaver serie 5000: afeitadora eléctrica Wet & Dry",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0DCFX4WNB?tag=pelotaofertas-21",
@@ -39,13 +81,6 @@
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B077M8YXL2?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71Z7MjejNAL._AC_SL500_.jpg",
-  "emoji": "🏃"
- },
- {
-  "titulo": "adidas Grand Court LO: zapatillas de mujer",
-  "categoria": "Deporte",
-  "enlace": "https://www.amazon.es/dp/B0F1XGQCZ5?tag=pelotaofertas-21",
-  "imagen": "https://m.media-amazon.com/images/I/71MyNp8l24L._AC_SL500_.jpg",
   "emoji": "🏃"
  },
  {
@@ -75,20 +110,6 @@
   "enlace": "https://www.amazon.es/dp/B0HRD6XKFK?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61pJmsOFeIL._AC_SL500_.jpg",
   "emoji": "💻"
- },
- {
-  "titulo": "Lefant M210 Omni: robot aspirador y fregasuelos con autovaciado",
-  "categoria": "Hogar",
-  "enlace": "https://www.amazon.es/dp/B0G7V5G5NR?tag=pelotaofertas-21",
-  "imagen": "https://m.media-amazon.com/images/I/71ofOuKvdrL._AC_SL500_.jpg",
-  "emoji": "🏠"
- },
- {
-  "titulo": "Briloner: set de 3 focos LED empotrables para techo",
-  "categoria": "Hogar",
-  "enlace": "https://www.amazon.es/dp/B00I4ZI94M?tag=pelotaofertas-21",
-  "imagen": "https://m.media-amazon.com/images/I/51A29iVgyxL._AC_SL500_.jpg",
-  "emoji": "🏠"
  },
  {
   "titulo": "Pyrex: fuente cuadrada de acero para horno 24 x 24 cm",
