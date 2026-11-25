@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const TAG = "pelotaofertas-21", MIN_DTO = 50, DIAS = 3, MAX = 60;
-const FEEDS = ["https://www.chollometro.com/rss/hot", "https://www.chollometro.com/rss/nuevos", "https://www.chollometro.com/rss/todas"];
+const FEEDS = ["https://www.chollometro.com/rss/hot", "https://www.chollometro.com/rss/nuevos"];
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 const ERROR = /error de precio|errores de precio|bug de precio|precio err[oó]neo|\bmistake\b/i;
 const CATS = {
