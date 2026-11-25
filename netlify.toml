@@ -1,7 +1,7 @@
 [build]
   publish = "."
   # No publicar (ni gastar créditos) si solo cambian los productos: la web los lee de GitHub
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)productos.json'"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)productos.json' ':(exclude).github'"
 
 [functions]
   directory = "netlify/functions"
