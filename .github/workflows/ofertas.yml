@@ -1,0 +1,23 @@
+name: Ofertas diarias
+on:
+  schedule:
+    - cron: "0 6,12,18 * * *"   # 7:00, 13:00 y 19:00 hora de España (invierno)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: ofertas
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node .github/scripts/ofertas.mjs
+      - name: Guardar si hay cambios
+        run: |
+          git config user.name "pelotaofertas-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add productos.json
+          git diff --cached --quiet || (git commit -m "Ofertas actualizadas automáticamente" && git push)

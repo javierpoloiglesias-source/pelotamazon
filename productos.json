@@ -1,198 +1,346 @@
 [
  {
+  "titulo": "Funko Pop! Movies: Happy Gilmore (30 Aniversario) – Alligator",
+  "categoria": "Juguetes",
+  "enlace": "https://www.amazon.es/dp/B0FPNMTGQQ?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0FPNMTGQQ.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🧸",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090214",
+  "fuente": "https://www.chollometro.com/ofertas/funko-pop-movies-happy-gilmore-30-aniversario-alligator-2090214"
+ },
+ {
+  "titulo": "Mr. Wonderful - Portatodo - Pata de Gallo",
+  "categoria": "Juguetes",
+  "enlace": "https://www.amazon.es/dp/B0FQQY1LQK?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0FQQY1LQK.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🧸",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090225",
+  "fuente": "https://www.chollometro.com/ofertas/mr-wonderful-portatodo-pata-de-gallo-2090225"
+ },
+ {
+  "titulo": "Funko Pop! Lord of The Rings - Gimli",
+  "categoria": "Juguetes",
+  "enlace": "https://www.amazon.es/dp/B0FPNBBN15?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0FPNBBN15.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🧸",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090224",
+  "fuente": "https://www.chollometro.com/ofertas/funko-pop-sayings-lord-of-the-rings-gimli-2090224"
+ },
+ {
+  "titulo": "POP Funko Star Wars: Rook Kast",
+  "categoria": "Juguetes",
+  "enlace": "https://www.amazon.es/dp/B08HH3YSCT?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B08HH3YSCT.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🧸",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090230",
+  "fuente": "https://www.chollometro.com/ofertas/pop-funko-star-wars-rook-kast-2090230"
+ },
+ {
+  "titulo": "Funko POP! Star Wars: Mandalorian & Grogu - Grogu with Food",
+  "categoria": "Juguetes",
+  "enlace": "https://www.amazon.es/dp/B08HH72K6J?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B08HH72K6J.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🧸",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090232",
+  "fuente": "https://www.chollometro.com/ofertas/funko-pop-star-wars-mandalorian-grogu-grogu-with-food-2090232"
+ },
+ {
+  "titulo": "Calvin Klein Mujer Ck Convertible Chain Medium Bag LV04F3171G",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B0GGBJP6NR?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0GGBJP6NR.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090244",
+  "fuente": "https://www.chollometro.com/ofertas/calvin-klein-mujer-ck-convertible-chain-medium-bag-lv04f3171g-2090244"
+ },
+ {
+  "titulo": "Reebok Angel Reese 1 ZapatillasUnisex Adulto Varias tallas.",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B0FD4111XX?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0FD4111XX.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090249",
+  "fuente": "https://www.chollometro.com/ofertas/reebok-angel-reese-1-zapatillasunisex-adulto-varias-tallas-2090249"
+ },
+ {
+  "titulo": "Manta de Bebé Seashells Indigo 80 x 80 cm de Algodón Orgánico (5' con lista de nacimiento)",
+  "categoria": "Juguetes",
+  "enlace": "https://www.amazon.es/dp/B0D1Y97K1C?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0D1Y97K1C.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🧸",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2089032",
+  "fuente": "https://www.chollometro.com/ofertas/manta-de-bebe-seashells-indigo-80-x-80-cm-de-algodon-organico-574eur-con-lista-de-nacimiento-2089032"
+ },
+ {
+  "titulo": "Springfield Camiseta S/S con Gráfico de Coche Japonés",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B0H4147BJB?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0H4147BJB.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2090164",
+  "fuente": "https://www.chollometro.com/ofertas/springfield-camiseta-ss-con-grafico-de-coche-japones-xs-m-l-y-xl-100-algodon-2090164"
+ },
+ {
+  "titulo": "Tarjeta localizadora Delgada para Cartera, Apple MFi certificada (Solo iOS) - 4 unidades",
+  "categoria": "Tecnología",
+  "enlace": "https://www.amazon.es/dp/B0HJVRS769?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0HJVRS769.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2089144",
+  "fuente": "https://www.chollometro.com/ofertas/tarjeta-localizadora-delgada-para-cartera-apple-mfi-certificada-solo-ios-4-unidades-2089144"
+ },
+ {
+  "titulo": "Rimmel Multi-Tasker Colorete en Barra",
+  "categoria": "Belleza",
+  "enlace": "https://www.amazon.es/dp/B0G16DY8FJ?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B0G16DY8FJ.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2089944",
+  "fuente": "https://www.chollometro.com/ofertas/rimmel-multi-tasker-colorete-en-barra-2089944"
+ },
+ {
+  "titulo": "PUMA Leadcat 2.0 Negro Black",
+  "categoria": "Deporte",
+  "enlace": "https://www.amazon.es/dp/B097C54SNF?tag=pelotaofertas-21",
+  "imagen": "https://images-na.ssl-images-amazon.com/images/P/B097C54SNF.01._SCLZZZZZZZ_SX500_.jpg",
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z",
+  "auto": "2089985",
+  "fuente": "https://www.chollometro.com/ofertas/puma-leadcat-20-negro-black-2089985"
+ },
+ {
   "titulo": "OMRON X2 Essential: tensiómetro de brazo digital validado clínicamente",
   "categoria": "Hogar",
   "enlace": "https://link.amazon/B0fP4D7zu",
   "imagen": "https://m.media-amazon.com/images/I/51RSTFZZa0L._AC_SL500_.jpg",
-  "emoji": "🩺"
+  "emoji": "🩺",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Ray-Ban Meta Gen 2 Wayfarer: gafas inteligentes con cámara 12 MP y Meta AI",
   "categoria": "Tecnología",
   "enlace": "https://link.amazon/B0dHBMMVM",
   "imagen": "https://m.media-amazon.com/images/I/51eqQKc4qYL._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Beats: funda MagSafe para iPhone 16 Pro",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B0DGHGQL63?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/4172zBmjxGL._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Bourjois Brow Reveal: lápiz de cejas de precisión",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B09MJK42V6?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61pTDrAwJaL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Pepe Jeans: zapatillas deportivas de hombre",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B098FG94PZ?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/515x3WqYyuL._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Jack & Jones: sudadera básica de cuello redondo",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B09PKDYLVF?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/614fe5McoqL._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Echo Dot (2022): altavoz inteligente con Alexa",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B09B8X9RGM?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71EJ6HlgX-L._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Philips i9000 Prestige: afeitadora eléctrica",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0DT6NDW4L?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71ubb8eK+QL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Grundig HD 2200: secador de pelo de viaje 1200 W",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0B9X6KP4D?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61t9f1ZilFL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Skechers Graceful Get Connected: zapatillas de mujer",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B07FF4QSKT?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/81AHcdq1udL._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Tommy Hilfiger Court Sneaker: zapatillas de piel para mujer",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B0D1VGFCVK?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/51NGD7nu27L._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "OSRAM Dulux LED S11: bombilla LED de 6 W luz fría",
   "categoria": "Hogar",
   "enlace": "https://www.amazon.es/dp/B097NFQHSX?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61OHPchd-XL._AC_SL500_.jpg",
-  "emoji": "🏠"
+  "emoji": "🏠",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Relaxdays: lámpara de mesa cubo de madera y vidrio",
   "categoria": "Hogar",
   "enlace": "https://www.amazon.es/dp/B082MF49BR?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61rmsu-ml1L._AC_SL500_.jpg",
-  "emoji": "🏠"
+  "emoji": "🏠",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Anker MagGo: cargador inalámbrico 3 en 1 plegable para iPhone",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B0D8SQJF1Z?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71OKuoIe1pL._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "CHERRY GENTIX BT: ratón inalámbrico Bluetooth multidispositivo",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B0BMG385YD?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61KFnm+91mL._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Philips Shaver serie 5000: afeitadora eléctrica Wet & Dry",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0DCFX4WNB?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/81Wb0f6sFxL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Puma Smash V2 L: zapatillas unisex",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B077M8YXL2?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71Z7MjejNAL._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "SockWaddles: pack de calcetines de algodón",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B0D8B3VSC8?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71VDxA4GDXL._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Auriculares inalámbricos Bluetooth 5.4 con 50 h de batería y sonido HiFi",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B0HQJY6YKJ?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61QB3ae4J9L._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Auriculares deportivos Bluetooth 5.3 con gancho y 60 h de reproducción",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B09TFJJY3W?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61lX+a+vOFL._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Auriculares inalámbricos Bluetooth 5.4 con pantalla LED y 48 h",
   "categoria": "Tecnología",
   "enlace": "https://www.amazon.es/dp/B0HRD6XKFK?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61pJmsOFeIL._AC_SL500_.jpg",
-  "emoji": "💻"
+  "emoji": "💻",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Pyrex: fuente cuadrada de acero para horno 24 x 24 cm",
   "categoria": "Cocina",
   "enlace": "https://www.amazon.es/dp/B00RXIKIIG?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61SM+348eCL._AC_SL500_.jpg",
-  "emoji": "🍳"
+  "emoji": "🍳",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Secador de pelo iónico profesional con difusor",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0GWVJ6XKV?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71uRgFzcdkL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Cecotec IoniCare: secador de pelo compacto con motor brushless",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0FKT988BZ?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71uQ07S30eL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "M. Asam AQUA INTENSE: crema de noche hidratante con ácido hialurónico",
   "categoria": "Belleza",
   "enlace": "https://www.amazon.es/dp/B0DSJQ1QBK?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/71jpClHyUAL._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "Eastpak Padded Pak'r: mochila de 24 L",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B000CRBEJ2?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/81fOUr20J+L._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "adidas: calcetines de entrenamiento Graphic Camo",
   "categoria": "Deporte",
   "enlace": "https://www.amazon.es/dp/B0C5RJ4GTZ?tag=pelotaofertas-21",
   "imagen": "https://m.media-amazon.com/images/I/61tsrGCzzIL._AC_SL500_.jpg",
-  "emoji": "🏃"
+  "emoji": "🏃",
+  "fecha": "2026-11-25T19:29:07.699Z"
  },
  {
   "titulo": "OMRON X2 Essential: tensiómetro de brazo digital validado clínicamente",
   "categoria": "Belleza",
   "enlace": "https://link.amazon/B08B1uiE4",
   "imagen": "https://m.media-amazon.com/images/I/51RSTFZZa0L._AC_SL500_.jpg",
-  "emoji": "💄"
+  "emoji": "💄",
+  "fecha": "2026-11-25T19:29:07.699Z"
  }
 ]

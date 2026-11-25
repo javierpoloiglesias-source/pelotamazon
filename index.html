@@ -206,7 +206,7 @@ function href(l){
   }catch(e){return "#"}
 }
 const tgt=l=>l==="#"?"":' target="_blank" rel="sponsored noopener nofollow"';
-const im=p=>`<img loading="lazy" alt="${esc(p.t)}" src="${esc(p.img||placeholder(p))}" onerror="this.onerror=null;this.src='${placeholder(p)}'">`;
+const im=p=>`<img loading="lazy" alt="${esc(p.t)}" src="${esc(p.img||placeholder(p))}" onload="if(this.naturalWidth<20){this.onload=null;this.src='${placeholder(p)}'}" onerror="this.onerror=null;this.src='${placeholder(p)}'">`;
 function lnk(x,cls,inner){const l=href(x.p.link);return `<a class="${cls}" href="${esc(l)}"${tgt(l)} aria-label="Ver en Amazon: ${esc(x.p.t)}">${inner}</a>`}
 const tile=(x,fr)=>lnk(x,"tile"+(fr?" frame":""),im(x.p)+`<span class="pct">Ver oferta</span>`);
 
