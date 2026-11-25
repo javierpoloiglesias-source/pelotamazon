@@ -81,7 +81,7 @@ for (const feed of FEEDS) {
       const titulo = cleanTitle(titulo0) || "Oferta en Amazon";
       const categoria = Object.keys(CATS).find((c) => CATS[c].test(cat0 + " " + titulo)) || "Hogar";
       items.unshift({ titulo, categoria, enlace: `https://www.amazon.es/dp/${asin}?tag=${TAG}`,
-        imagen: "", // sin copiar fotos de Amazon (norma 8); la web pone su icono
+        imagen: `https://images-na.ssl-images-amazon.com/images/P/${asin}.01._SCLZZZZZZZ_SX500_.jpg`, // enlazada, no copiada (opción A de JAVI)
         emoji: EMOJI[categoria], fecha: new Date(ahora).toISOString(), auto: id, fuente: link, ...(esError ? { error: true } : {}) });
       nuevos++;
       console.log(`+ ${d.dto}%${esError ? " (error de precio)" : ""} ${asin} ${titulo}`);
