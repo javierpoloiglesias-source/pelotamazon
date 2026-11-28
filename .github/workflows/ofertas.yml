@@ -1,7 +1,7 @@
 name: Ofertas diarias
 on:
   schedule:
-    - cron: "0 6,12,18 * * *"   # 7:00, 13:00 y 19:00 hora de España (invierno)
+    - cron: "17 6,12,18 * * *"   # 7:17, 13:17 y 19:17 hora de España (invierno)
   workflow_dispatch:
 permissions:
   contents: write
